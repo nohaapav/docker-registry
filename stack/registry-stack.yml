@@ -1,0 +1,30 @@
+version: '3.1'
+
+services:
+  registry:
+    image: registry:2
+    ports:
+      - 5000:5000
+    secrets:
+      - registry.htpasswd
+    logging:                                                                          
+      driver: json-file
+    networks:
+      - net
+    environment:
+      REGISTRY_AUTH: htpasswd
+      REGISTRY_AUTH_HTPASSWD_PATH: /run/secrets/registry.htpasswd
+      REGISTRY_AUTH_HTPASSWD_REALM: Registry Realm
+    volumes:
+      - registry-data:/var/lib/registry
+
+networks:
+  net:
+    driver: overlay
+
+secrets:
+  registry.htpasswd:
+    external: true
+
+volumes:
+  registry-data:
