@@ -12,4 +12,4 @@ Docker registry v2 swarm mode setup with basic auth
 
 ## Important
 
-TLS support is not included. In order to support SSL termination please refer to [nginx](https://github.com/nohaapav/docker-nginx) or my favourite [traefik] (https://traefik.io/)
+TLS support is not included. In order to support SSL termination please refer to [nginx](https://github.com/nohaapav/docker-nginx) or my favourite [traefik](https://traefik.io/)
